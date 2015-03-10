@@ -79,7 +79,7 @@ TWILIO_NUMBER= # From number for the SMS
 ### 3. Create the JS proxies to call Webtask.io
 
 ```bash
-webtaskify create -f ./sendSms.js -t [yourAccountName] -n [yourWebtaskToken]
+webtaskify create -f ./smsSender.js -t [yourAccountName] -n [yourWebtaskToken]
 ```
 
 ### 4. Run & Enjoy
