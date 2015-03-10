@@ -2,7 +2,7 @@
 
 Send an SMS easily using [webtask.io](https://webtask.io)
 
-![Send SMS](https://cdn.auth0.com/webtask/smsSend.gif)
+![Send SMS](https://cdn.auth0.com/webtask/sendSms.gif)
 
 ## Interesting pieces
 
