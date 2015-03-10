@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send SMS with https://webtask.io</title>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="signup center-block jumbotron" style="width: 50%">
+    <form role="form">
+      <h1>Send an SMS</h1>
+      <div class="form-group">
+        <label for="username">Phone Number</label>
+        <input type="tel" id="phone" class="form-control" id="phone" placeholder="Phone number">
+      </div>
+      <div class="form-group">
+        <label for="username">Text for SMS</label>
+        <input type="text" id="text" class="form-control" id="phone" placeholder="Phone number">
+      </div>
+      <button type="submit" class="btn btn-default" id="send">Send SMS</button>
+    </form>
+  </div>
+
+
+
+  <!-- Initialize SPA -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.js"></script>
+  <script type="text/javascript" src="webtask.dev.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+
+      $('#send').click(function(e) {
+        e.preventDefault();
+        taskd.sendSms.run({
+          message: $('#text').val(),
+          to: $('#phone').val()
+        }).then(function(response) {
+          alert("Text message was sent");
+        }, function(error) {
+          alert("Error sending message");
+          console.log("Error", error);
+        });
+      })
+     });
+  </script>
+</body>
+</html>
