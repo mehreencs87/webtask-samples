@@ -58,12 +58,18 @@ $('#send').click(function(e) {
 
 ## Using the example
 
-### 1. Install `webtaskify`
+### 1. Install `webtaskify` & login
 
 First, you need to install `webtaskify` to create JS proxies to call Webtask.io.
 
 ```bash
 npm install -g webtaskify
+```
+
+```bash
+webtaskify login
+> Enter your WebTask account name: [accountName]
+> Enter your WebTask Token (hidden): [accountToken]
 ```
 
 ### 2. Configure the SMS sender with your Twilio account
@@ -79,7 +85,7 @@ TWILIO_NUMBER= # From number for the SMS
 ### 3. Create the JS proxies to call webtask.io
 
 ```bash
-webtaskify create -f ./smsSender.js -t [yourAccountName] -n [yourWebtaskToken]
+webtaskify create -f ./smsSender.js
 ```
 
 ### 4. Run & Enjoy
